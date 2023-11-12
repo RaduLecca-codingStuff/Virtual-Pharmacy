@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "Virtual-Pharmacy": {
+    "Virtual_Pharmacy": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -63,10 +63,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "Virtual-Pharmacy:build:production"
+              "buildTarget": "Virtual_Pharmacy:build:production"
             },
             "development": {
-              "buildTarget": "Virtual-Pharmacy:build:development"
+              "buildTarget": "Virtual_Pharmacy:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -74,7 +74,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "Virtual-Pharmacy:build"
+            "buildTarget": "Virtual_Pharmacy:build"
           }
         },
         "test": {
