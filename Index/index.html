@@ -39,27 +39,59 @@
     </div>
     <div id="PacientPage">
         <h1>Pacient</h1>
-        
+        <div id="Prescriptions">
+            <h3>Prescriptions</h3>
+
+        </div>
+        <div id="Request">
+            <h3>Request Medicine</h3>
+        </div>
     </div>
     <div id="PharmacistPage">
         <h1>Pharmacist</h1>
+        <div id="AddMed">
+            <label >Name : <br><input id="addMedName" type="text" /></label><br>
+            <label >Expiration date : <br><input id="addExpirDate" type="text" /></label><br>
+            <label >Lot : <br><input id="addLot" type="text" /></label><br>
+            <label >Quantity : <br><input id="addQuantity" type="text" /></label><br>
+            <button id="AddTheMedicine">Add</button><br>
+        </div>
+        <div>
+            <h3>Pacient Medicine Requests</h3>
+        </div>
+        <div id="AddPac">
+            <h3>Add pacient</h3>
+            <label >First Name : <br><input id="addFN" type="text" /></label><br>
+            <label >Last Name : <br><input type="text" id="addLN"/></label><br>
+            <label >CNP : <br><input type="text" id="addC"/></label><br>
+            <label >Adress : <br><input type="text" id="addA"/></label><br>
+            <label >Phone Number : <br><input type="text" id="addPN"/></label><br>
+            <label >Prescriptions : <br>
+                <div id="addML">
+                </div>
+            </label><br>
+            <button id="AddThePacient">Add</button><br>
+        </div>
+        <div id="EditPacPres">
+            <div id="EditPrescriptions">
+                <h3>Select which prescriptions to add and which to remove.</h3>
+                <div id="PrescriptionConfig">
 
-        <h3>Add pacient</h3>
-        <label >First Name : <br><input id="addFN" type="text" /></label><br>
-        <label >Last Name : <br><input type="text" id="addLN"/></label><br>
-        <label >CNP : <br><input type="text" id="addC"/></label><br>
-        <label >Adress : <br><input type="text" id="addA"/></label><br>
-        <label >Phone Number : <br><input type="text" id="addPN"/></label><br>
-        <label >Prescriptions : <br>
-            <div id="addML">
-                <select name="MedicineSelect" class="addM" id="addM"></select>
+
+                </div>
+                <button id="FinishEditPrescription">Submit Prescription</button>
             </div>
-        </label><br>
+        </div>
+        <div id="PharmacistMainButtons">
+            <button id="OpenMedicineAddMenu">Add Medicine</button>
+            <button id="OpenPacientAddMenu">Add Pacient</button>
+        </div>
         
-        <button id="AddMButton">Add Medicine</button><br>
-        <button id="AddPButton">Add</button>
         
     </div>
+    
+   
+  
 
 </body>
 </html>

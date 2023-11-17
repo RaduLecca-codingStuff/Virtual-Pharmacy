@@ -1,5 +1,5 @@
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.6.0/firebase-app.js';
-import {  doc, setDoc, getDoc, addDoc, collection, getFirestore, getDocs } from 'https://www.gstatic.com/firebasejs/10.6.0/firebase-firestore.js';
+import {  query,where, doc, setDoc, getDoc, addDoc, collection, getFirestore, getDocs } from 'https://www.gstatic.com/firebasejs/10.6.0/firebase-firestore.js';
 
 const firebaseConfig = {
     apiKey: "AIzaSyAMmfoa_zhCr2SWpNDv1Y0PndPow09zqQc",
@@ -16,18 +16,17 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore();
 
-
-document.getElementById("AddPButton").onclick =
-    function AddPacient() {
+//adds new pacients
+document.getElementById("AddThePacient").onclick =
+    async function AddPacient() {
         var medRef = document.getElementById("addML").getElementsByTagName("select");
 
         var medList = "";
         for (i = 0; i < medRef.length; i++) {
             medlist += medRef[i].value.toString() + ";"
         }
-        addDoc(doc(db, "pacients"), {
-            first_name: document.getElementById("addFN").value,
-            last_name: document.getElementById("addLN").value,
+        await addDoc(doc(db, "pacients"), {
+            name: document.getElementById("addLN").value + " "+document.getElementById("addFN").value,
             cnp: document.getElementById("addC").value,
             adress: document.getElementById("addA").value,
             phone_number: document.getElementById("addPN").value,
@@ -36,7 +35,54 @@ document.getElementById("AddPButton").onclick =
 
     }
 
+    //adds new Medicine
+    document.getElementById("AddTheMedicine").onclick =
+    async function AddMedicine(){
 
-    function AddMedicine(){
+        var medref=collection(db,"medicine");
+        await setDoc(doc(medref,document.getElementById("addMedName")),{
+            expiration_date:document.getElementById("addExpirDate").value,
+            lot:document.getElementById("addLot").value,
+            quantity:document.getElementById("addQuantity").value,
+        })
+    }
 
+
+    //used to get a list of possible medicine options
+    async function RetrieveMedicineList()
+    {
+        var resultMedList=[];
+        const querySnapshot = await getDocs(collection(db, "medicine"));
+        querySnapshot.forEach((doc) => {
+            // doc.data() is never undefined for query doc snapshots
+            //console.log(doc.id, " => ", doc.data());
+            //console.log(doc.id.toString())
+
+            resultMedList.push(doc.id.toString())
+            console.log(document.getElementById("addML"));
+            //document.getElementById("addML").innerHTML+=`<select name="MedicineSelect"> ${doc.id.toString()}</select>`;
+        });
+        return resultMedList;
+    }
+
+    
+    async function EditPacient(){
+
+        var setID;
+        var reference = db.ref('pacients').orderByChild('cnp').equalTo("");
+        ref.once('name', snapshot => {
+            if (snapshot.exists()) {
+                setID = snapshot.id;
+                console.log(' User name: ' + setID);
+            } else {
+                console.log('There is no user ');
+            }
+
+        })
+
+        async (e) => { //...
+            await updateDoc(doc(db, "pacients",setID), {
+               foo: 'bar'
+             });
+            }
     }
