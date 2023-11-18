@@ -7,8 +7,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="style.css">
         <script type="module" src="modules/logInScript.js" defer></script>
-        <script type="module" src="modules/PharmacistPage.js" defer></script>
-        <script type="module" src="modules/PacientPage.js" defer></script>
     </head>
 <body>
 
@@ -18,22 +16,22 @@
             <button id="pButton">Log in as pacient</button>
             <button id="phButton">Log in as pharmacist</button>
         </div>
-        <div id="pacientLogIn">
+        <form id="pacientLogIn">
 
             <h1>Pacient</h1>
             <label id="fnP">First Name : <br><input type="text" /></label><br>
             <label id="lnP">Last Name : <br><input type="text" /></label><br>
             <label id="cnpP">CNP : <br><input type="text" /></label>
-        </div>
+        </form>
 
-        <div id="pharmaLogIn">
+        <form id="pharmaLogIn">
 
             <h1>Pharmacist</h1>
             <label id="fnPH">First Name : <br><input type="text" /></label><br>
             <label id="lnPH">Last Name : <br><input type="text" /></label><br>
             <label id="pswP">Password : <br><input type="password" /></label>
             
-        </div>
+        </form>
 
         <button id="loginButton">Submit</button>
     </div>
@@ -43,34 +41,56 @@
             <h3>Prescriptions</h3>
 
         </div>
-        <div id="Request">
+        <div id="MedRequest">
             <h3>Request Medicine</h3>
+            <label >Pharmacist : <br>
+                <select name="chooseAPharmacist" id="chooseAPharmacist">
+
+                </select>
+            </label><br>
+            <label >Medicine Type : <br>
+                <select name="chooseMedicine" id="chooseMedicine">
+
+                </select>
+            </label><br>
+            <button id="SubmitMedRequest">Submit</button>
+        </div>
+        <div id="PacientMainButtons">
+            <button id="OpenMedRequest">Submit</button>
         </div>
     </div>
     <div id="PharmacistPage">
         <h1>Pharmacist</h1>
-        <div id="AddMed">
+        <form id="AddMed">
             <label >Name : <br><input id="addMedName" type="text" /></label><br>
-            <label >Expiration date : <br><input id="addExpirDate" type="text" /></label><br>
+            <label >Expiration date : <br><input id="addExpirDate" type="date" /></label><br>
             <label >Lot : <br><input id="addLot" type="text" /></label><br>
-            <label >Quantity : <br><input id="addQuantity" type="text" /></label><br>
-            <button id="AddTheMedicine">Add</button><br>
-        </div>
+            <label >Quantity : <br><input id="addQuantity" type="number" /></label><br>
+            <button type="button" id="AddTheMedicine">Add</button><br>
+        </form>
         <div>
             <h3>Pacient Medicine Requests</h3>
+            <div id="PacientReqCollection"></div>
         </div>
-        <div id="AddPac">
+        <form id="AddPac">
             <h3>Add pacient</h3>
             <label >First Name : <br><input id="addFN" type="text" /></label><br>
             <label >Last Name : <br><input type="text" id="addLN"/></label><br>
-            <label >CNP : <br><input type="text" id="addC"/></label><br>
+            <label >CNP : <br><input type="number" id="addC"/></label><br>
             <label >Adress : <br><input type="text" id="addA"/></label><br>
-            <label >Phone Number : <br><input type="text" id="addPN"/></label><br>
+            <label >Phone Number : <br><input type="number" id="addPN"/></label><br>
             <label >Prescriptions : <br>
-                <div id="addML">
-                </div>
+                <select name="addML" id="addML">
+
+                </select>
             </label><br>
-            <button id="AddThePacient">Add</button><br>
+            <button type="button" id="AddThePacient">Add</button><br>
+        </form>
+        <div id="RequestApplyPopup">
+            <h3>Do you wish to prescribe this medicine for this pacient?</h3>
+            <button id="RAPyes">Yes</button>
+            <button id="RAPno">No</button>
+            <button id="RAPleave">Leave this for later</button>
         </div>
         <div id="EditPacPres">
             <div id="EditPrescriptions">
