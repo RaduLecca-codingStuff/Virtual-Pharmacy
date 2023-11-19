@@ -1,0 +1,54 @@
+@font-face {
+    font-family: TitleFont;
+    src: url(./fonts/Magical_Childhood.ttf);
+  }
+
+body{
+    align-items: center;
+    text-align: center;
+    background-color:aliceblue;
+    color:rgb(25, 25, 39);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+}
+
+.info{
+    background-color: rgb(143, 143, 200);
+    padding: 20px;
+
+}
+
+button{
+    border-radius: 20px;
+    background-color: rgb(94, 143, 193);
+    padding: 20px;
+    box-shadow: inset;
+}
+button:hover{
+    background-color:deepskyblue;
+    box-shadow: none;
+}
+
+label{
+    padding:20px;
+    background-color: rgb(113, 113, 190);
+    border-radius: 10px;
+
+}
+
+input,select,option{
+    padding:15px;
+    background-color: rgb(174, 174, 224)
+}
+
+option:hover{
+
+    background-color: rgb(94, 199, 255)
+}
+
+h1,h2,h3{
+    font-family:TitleFont;
+    
+}
+
+
