@@ -9,32 +9,6 @@
         <script type="module" src="modules/mainscript.js" defer></script>
     </head>
 <body>
-
-    <div id="login">
-        <h2>Log in</h2>
-        <div>
-            <button id="pButton">Log in as pacient</button>
-            <button id="phButton">Log in as pharmacist</button>
-        </div>
-        <form id="pacientLogIn" >
-
-            <h1>Pacient</h1>
-            <label >First Name : <br><input type="text" id="fnP"/></label><br>
-            <label >Last Name : <br><input type="text" id="lnP" /></label><br>
-            <label >CNP : <br><input type="text" id="cnpP"/></label>
-        </form>
-
-        <form id="pharmaLogIn">
-
-            <h1>Pharmacist</h1>
-            <label >First Name : <br><input type="text" id="fnPH"/></label><br>
-            <label >Last Name : <br><input type="text" id="lnPH"/></label><br>
-            <label >Password : <br><input type="password" id="pswP"/></label>
-            
-        </form>
-
-        <button id="loginButton">Submit</button>
-    </div>
     <div id="PacientPage">
         <h1>Pacient</h1>
         <div id="PacientInfo" class="info">
@@ -120,8 +94,31 @@
             <button id="OpenPrescribeMenu">Prescribe Medicine</button>
         </div>
     </div>
-    
-  
+    <div id="login">
+        <h2>Log in</h2>
+        <div>
+            <button id="pButton">Log in as pacient</button>
+            <button id="phButton">Log in as pharmacist</button>
+        </div>
+        <form id="pacientLogIn" >
+
+            <h1>Pacient</h1>
+            <label >First Name : <br><input type="text" id="fnP"/></label><br>
+            <label >Last Name : <br><input type="text" id="lnP" /></label><br>
+            <label >CNP : <br><input type="text" id="cnpP"/></label>
+        </form>
+
+        <form id="pharmaLogIn">
+
+            <h1>Pharmacist</h1>
+            <label >First Name : <br><input type="text" id="fnPH"/></label><br>
+            <label >Last Name : <br><input type="text" id="lnPH"/></label><br>
+            <label >Password : <br><input type="password" id="pswP"/></label>
+            
+        </form><br>
+            <button id="loginButton">Submit</button>
+        
+    </div>
 
 </body>
 </html>

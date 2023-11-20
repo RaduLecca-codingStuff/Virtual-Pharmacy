@@ -61,7 +61,7 @@ async function GetRequest() {
 //////////////////////////////
 ////  Pacient functions   ////
 //////////////////////////////
-{
+
     document.getElementById("MedRequest").style.display = "none";
 
     async function DisplayPData() {
@@ -106,12 +106,12 @@ async function GetRequest() {
 
 
 
-}
+
 
 /////////////////////////////////
 ////  Pharmacist functions   ////
 /////////////////////////////////
-{
+
 
     document.getElementById("RequestApplyPopup").style.display = "none";
     document.getElementById("EditPrescriptions").style.display = "none";
@@ -270,13 +270,13 @@ async function GetRequest() {
             });
             ReturntoPharmacistMenu()
         }
-}
+
 
 
 ////////////////////////////
 ////  Login functions   ////
 ////////////////////////////
-{
+
     //login initial info
     document.getElementById("pacientLogIn").style.display = "none";
     document.getElementById("pharmaLogIn").style.display = "none";
@@ -357,6 +357,5 @@ async function GetRequest() {
             document.getElementById("loginButton").style.display = "block";
             isPacient = false;
         };
-}
 
 
